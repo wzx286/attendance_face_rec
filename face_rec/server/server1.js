@@ -6,9 +6,9 @@ var bodyParser =require('body-parser');
 var AipFaceClient = require("node-sdk").face;
 // console.log(AipFaceClient);
 // 设置APPID/AK/SK
-var APP_ID = "10208126";
-var API_KEY = "duYegogoa6cBVPxzcduXIkAZ";
-var SECRET_KEY = "k4jM0Xi8EwrOhnceUKTNl46Gaf2S4PNy";
+var APP_ID = "";
+var API_KEY = "";
+var SECRET_KEY = "";
 
 var client = new AipFaceClient(APP_ID, API_KEY, SECRET_KEY);
 var app = express();
