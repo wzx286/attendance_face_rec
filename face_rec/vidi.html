@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<title>人脸识别签到页面(结合百度大脑的sdk)</title>
+</head>
+<body>
+	<div class="v-area">
+		<div class="v-s">
+			<video id="video" >您的浏览器不支持此控件</video>
+			<canvas id="canvas">您的浏览器不支持此控件</canvas>
+		</div>
+		<div class="v-t">
+			<div id='pc_log' onclick="expandLog(this)">
+				<span>注册</span>
+				<div>
+					<input type="text" id="uid_p" placeholder="账号"/>
+					<input type="text" id="userInfo_p" placeholder="用户名"/>
+					<div >
+						<label id="logImg_p" onclick="pcLog()">确定并拍照注册</label>					
+					</div>
+				</div>				
+			</div>
+			<div id='mobile_log' onclick="expandLog(this)">
+				<span>注册</span>
+				<div>
+					<input type="text" id="uid_m" placeholder="账号">
+					<input type="text" id="userInfo_m" placeholder="用户名">
+					<div >
+						<label for="logImg_m">确定并拍照注册</label>
+						<input type="file" id="logImg_m" accept="image/*" capture="camera" value="选择" onchange="mobileLog(this)"/>
+					</div>
+				</div>				
+			</div>
+			<div id="pc_camera" onclick="sendImgToServer()">
+				<span>识别</span>
+			</div>
+			<div id="mobile_camera">			
+				<span><label for="shoot">拍照识别</label></span>
+				<input id="shoot" type="file" accept="image/*" capture="camera" onchange="sendImgToServer(this)"/>		
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/wzxAjax.js"></script>	
+	<script type="text/javascript" src="js/faceRec.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/12.23 +'px';
+			loadCamera();
+		}			
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="css/faceRec.css">
+</body>
+</html>
